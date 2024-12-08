@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Generator</title>
+</head>
+<body>
+    <h1>Question Generator</h1>
+    
+    <!-- Form to submit context and select model -->
+    <form action="/generate_questions" method="POST">
+        <label for="context">Enter Context:</label><br>
+        <textarea id="context" name="context" rows="6" cols="50">{{ context }}</textarea><br><br>
 
+        <label for="model_type">Select Model:</label><br>
+        <select id="model_type" name="model_type">
+            <option value="bart" {% if model_type == "bart" %}selected{% endif %}>BART</option>
+            <option value="t5" {% if model_type == "t5" %}selected{% endif %}>T5</option>
+            <option value="bert" {% if model_type == "bert" %}selected{% endif %}>BERT</option>
+        </select><br><br>
+
+        <input type="submit" value="Generate Questions">
+    </form>
+
+    <h2>Generated Questions:</h2>
+    {% if questions %}
+        <ul>
+            {% for question in questions %}
+                <li>{{ question }}</li>
+            {% endfor %}
+        </ul>
+    {% elif error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
