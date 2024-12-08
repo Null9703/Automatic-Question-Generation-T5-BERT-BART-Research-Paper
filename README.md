@@ -11,3 +11,6 @@ To access our models, they have been uploaded onto google drive since GitHub can
 The link for these models is: https://drive.google.com/drive/folders/1gFBv4str8KMpphcyF4aeK342hap2_P2v?usp=drive_link
 
 
+## For MCQ Question Generation
+To access our models, they have been uploaded onto google drive since GitHub cannot handle that large a set of files.
+The link for these models is: https://drive.google.com/drive/folders/1BXTIQavrpU_CKtYd4CEWDEK1VkWq7Os-?usp=sharing
