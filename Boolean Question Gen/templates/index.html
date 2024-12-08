@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen AI Boolean Question Generator</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;  /* Full black background */
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
+        /* Adding texture to background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1%, transparent 1%);
+            background-size: 10px 10px;
+            z-index: 0;
+        }
+
+        /* Container Styles */
+        .container {
+            position: relative;
+            z-index: 1;
+            background-color: #001f3d;  /* Navy background */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 255, 0.8); /* Lighter blue for the shadow */
+            max-width: 700px;
+            width: 90%;
+            padding: 25px 30px;
+            text-align: center;
+            border: 2px solid #003366;  /* Darker blue border */
+        }
+
+        /* Header */
+        h1 {
+            color: #ffffff;  /* White text for the header */
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #a8c0d1;  /* Light blue */
+            margin-top: 20px;
+            font-size: 1.8rem;
+        }
+
+        /* Form Styles */
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #e0f1ff;  /* Lighter blue for the label */
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        textarea {
+            width: 80%;
+            margin: 0 auto 20px;
+            display: block;
+            height: 120px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2b3e56;  /* Darker blue for the textarea */
+            color: #ffffff;
+            padding: 12px;
+            resize: none;
+            font-size: 1rem;
+        }
+
+        textarea:focus {
+            outline: 2px solid #003366;  /* Darker blue on focus */
+        }
+
+        input[type="submit"] {
+            width: 50%;
+            padding: 12px;
+            margin: 20px auto 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #0066cc;  /* Blue submit button */
+            color: #ffffff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: block;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005bb5;  /* Slightly darker blue on hover */
+            transform: scale(1.05);
+        }
+
+        /* Generated Questions Styles */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #2b3e56;  /* Darker blue for list items */
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 5px;
+            color: #a8c0d1;  /* Light blue text for questions */
+            text-align: left;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            input[type="submit"] {
+                font-size: 1rem;
+            }
+
+            textarea {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gen AI Boolean Question Generator</h1>
+        <form action="/generate" method="POST">
+            <label for="passage">Enter Passage:</label>
+            <textarea id="passage" name="passage" required>{{ passage if passage else '' }}</textarea>
+            <input type="submit" value="Generate Questions">
+        </form>
+        {% if questions %}
+            <h2>Generated Questions:</h2>
+            <ul>
+                {% for question in questions %}
+                    <li>{{ question }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
