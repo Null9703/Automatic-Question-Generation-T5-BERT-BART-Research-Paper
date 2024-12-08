@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <h1>Gen AI MCQ Question Generator</h1>
+        
+        <form method="post">
+            {{ form.hidden_tag() }}
+            
+            <div class="text-content">
+                <label for="paragraphs">Enter your text below: </label>
+                {{ form.context(id="paragraphs", class="form-control", rows="3", placeholder="Please enter your content here.", oninput="autoResize()") }}
+            </div>
+            
+            <div class="text-content" id="top-number" style="margin-top: 20px;">
+                <label for="number_of_mcqs">Number of required questions:</label><br>
+                {{ form.number_of_questions(class="form-control", id="number_of_mcqs", placeholder="Number of MCQs", type="number") }}
+            </div>
+            
+            <button onclick="showLoader()" class="btn btn-outline-success" type="submit">Generate MCQs</button>
+        </form>
+    </div>
+{% endblock %}

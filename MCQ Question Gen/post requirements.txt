@@ -1,0 +1,6 @@
+pip install --upgrade setuptools
+python -m spacy download en_core_web_sm
+after this place this code in your mcq_app.py
+import nltk
+nltk.download('averaged_perceptron_tagger')
+nltk.download('maxent_ne_chunker')

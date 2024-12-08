@@ -1,0 +1,121 @@
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;  /* Full black background */
+  color: #ffffff;  /* White text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Prevent body overflow */
+}
+
+/* Adding texture to background */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1%, transparent 1%);
+  background-size: 10px 10px;
+  z-index: 0;
+}
+
+/* Container Styles */
+.container {
+  position: relative;
+  z-index: 1;
+  background-color: #001f3d;  /* Navy blue background */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 139, 0.8); /* Lighter blue for the shadow */
+  max-width: 700px;
+  width: 90%;
+  padding: 25px 30px;
+  text-align: center;
+  border: 2px solid #003366;  /* Darker navy blue border */
+  max-height: 90vh;  /* Limit the container height */
+  overflow-y: auto;  /* Allow scrolling inside container */
+}
+
+/* Header */
+h1 {
+  color: #ffffff;  /* White text for the header */
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+/* Form Styles */
+form {
+  margin-bottom: 20px;
+}
+
+/* Label Styles */
+label {
+  font-size: 1rem;
+  color: #e0f1ff;  /* Light blue for the label */
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Textarea Styles */
+textarea {
+  width: 80%;
+  margin: 0 auto 20px;
+  display: block;
+  height: 120px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2b3e56;  /* Darker navy blue for textarea */
+  color: #ffffff;
+  padding: 12px;
+  resize: none;
+  font-size: 1rem;
+}
+
+textarea:focus {
+  outline: 2px solid #003366;  /* Darker blue on focus */
+}
+
+/* Input Styles */
+input[type="submit"], .btn-outline-success {
+  width: 50%;
+  padding: 12px;
+  margin: 20px auto 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #0066cc;  /* Navy blue submit button */
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+}
+
+input[type="submit"]:hover, .btn-outline-success:hover {
+  background-color: #005bb5;  /* Slightly darker blue on hover */
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+      font-size: 2rem;
+  }
+
+  input[type="submit"], .btn-outline-success {
+      font-size: 1rem;
+  }
+
+  textarea {
+      width: 90%;
+  }
+
+  select {
+      width: 90%;
+  }
+}
