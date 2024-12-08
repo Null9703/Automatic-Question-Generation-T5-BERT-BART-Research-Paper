@@ -5,3 +5,9 @@ Generative AI has made much progress in the field of natural language processing
 ## For Comprehension Question Generation
 To access our models, they have been uploaded onto google drive since GitHub cannot handle that large a set of files.
 The link for these models is: https://drive.google.com/file/d/1p7eZDT2jPNSlyWigOBHDkYvNW460VEYG/view?usp=sharing
+
+## For Boolean Question Generation
+To access our models, they have been uploaded onto google drive since GitHub cannot handle that large a set of files.
+The link for these models is: https://drive.google.com/drive/folders/1gFBv4str8KMpphcyF4aeK342hap2_P2v?usp=drive_link
+
+
